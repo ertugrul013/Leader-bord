@@ -1,11 +1,18 @@
 from django.db import models
 from django.db.models.deletion import CASCADE
 from .choices import Game_Choices
+from decimal import Decimal
+from django.db.models import F, Sum
+
 
 
 class Customer(models.Model):
     nickname = models.CharField(max_length=30, verbose_name="Nickname")
     totalScore = models.IntegerField(default=0, verbose_name="Totaalscore")
+    totalScoreFifa = models.IntegerField(default=0, verbose_name="totaalScore Fifa")
+    totalScoreMarioKart = models.IntegerField(default=0, verbose_name="totaalScore Mario Kart")
+    totalScoreRocketLeague = models.IntegerField(default=0, verbose_name="totaalScore Rocket League")
+
 
     def __str__(self):
         return self.nickname
