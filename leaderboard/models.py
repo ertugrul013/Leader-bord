@@ -82,7 +82,7 @@ class Teams(models.Model):
         default=0, verbose_name="totaalScore Arrow Song", editable=False
     )
     totalTeamScoreQuantumArena = models.IntegerField(
-        default=0, verbose_name="totaalScore Quantum Arena", editable=True
+        default=0, verbose_name="totaalScore Quantum Arena", editable=False
     )
     totalTeamScoreQub3zShooter = models.IntegerField(
         default=0, verbose_name="totaalScore Qub3z Shooter", editable=False
