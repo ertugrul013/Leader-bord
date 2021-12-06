@@ -4,7 +4,7 @@
 <html lang="en">
 
 <head>
-<meta http-equiv="refresh" content="15;url={% url 'fifa_score' %}" />
+<meta http-equiv="refresh" content="30;url={% url 'fifa_score' %}" />
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,13 +23,24 @@ integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3Ah
 </div>
 
 <div class="container">
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-<a class="navbar-brand"><span style="color:#fcd20a">Qub3z Leaderboard</span></a>    
+<nav class=" bg-dark">
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link" href="#">QUB3Z OVERALL LEADERBOARD</a>
+  </li>
+</ul>
 </nav>
 <div class="achtergrond"> 
 <div class="row">
 <div class="col-6 col-sm-3">
-<div class="logo"><img src="{% static '/img/frontPageLogo.png' %}" alt="My image" class="logo"></div>
+<div class="logo"><img src="{% static '/img/logo/frontPageLogo.png' %}" alt="My image" class="logo"></div>
+
+<div  class="reclame">
+<video loop muted autoplay class="reclameVideo" style= "z-index: 9">
+<source src="{% static '/vids/reclameVideo.mp4' %}" type="video/mp4"> 
+</video>
+</div>
+
 </div>
 <div class="col-6 col-sm-9">
 <table id:"table">
@@ -41,11 +52,11 @@ integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3Ah
 </tr>
 </thead>
 <tbody>
-{% for customers in customer %}
+{% for TotalScores in TotalScore %}
 <tr class="tableBody">
     <td></td>
-    <td>{{ customers.nickname }}</td>
-    <td> {{ customers.totalScore }}</td>
+    <td>{{ TotalScores.nickname }}</td>
+    <td> {{ TotalScores.totalScore }}</td>
 </tr>
 </tbody>
 {% endfor %}
